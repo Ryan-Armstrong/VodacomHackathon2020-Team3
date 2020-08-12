@@ -1,0 +1,40 @@
+.toolbar {
+  background-color: rgb(230, 0, 0);
+  width: 360pt;
+  height: 56pt;
+}
+
+.uxDesign {
+  color: rgb(230, 255, 255);
+  width: 221pt;
+  height: 23pt;
+  font-size: 20pt;
+  margin-left: 16pt;
+  margin-top: 17.5pt;
+  margin-bottom: 16pt;
+  margin-right: 62pt
+}
+
+.toolbarBg {
+  width: 360pt;
+  height: 56pt;
+  background-color: rgb(230, 0, 0);
+}
+
+.textContainer {
+  margin-left: 26pt;
+  margin-top: 15pt;
+  margin-bottom: 17pt;
+}
+
+.icCloseWhite {
+  width: 24pt;
+  height: 24pt;
+  margin-left: 17pt;
+  margin-left: 325pt;
+}
+
+.closeContainer {
+  margin-top: 11pt;
+  margin-bottom: 17pt;
+}

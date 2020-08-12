@@ -1,5 +1,6 @@
 {
   "pages": [  
+     "pages/recipient/recipient",
      "pages/buyBundle/buyBundle",
      "pages/summary/summary",
      "pages/order-status/order-status"

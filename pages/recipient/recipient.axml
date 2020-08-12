@@ -1,0 +1,13 @@
+<view class="toolbar"  >
+<heading/>
+<!-- <view class="bounds">
+<view class="uxDesign">
+  <text class="toolBarText">I'm buying for</text>
+</view>
+</view> -->
+
+<!-- <view class="addNumburer">
+<image class="icAddPlus" src="/assets/images/icAddPlus.png" onTap="onAddNumber"/>
+<text class="addNumberText" onTap="onAddNumber">Add New Number</text>
+</view> -->
+</view>

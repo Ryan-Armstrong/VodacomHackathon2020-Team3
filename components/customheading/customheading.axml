@@ -1,0 +1,17 @@
+<view class="toolbar">
+
+<view class="textContainer">
+   <view class="uxDesign">
+  <text class="toolBarText">I'm buying for</text>
+
+  <view class="closeContainer">
+  <image class="icCloseWhite" src="/assets/images/icCloseWhite.png" onTap="onAddNumber"/>
+</view>
+
+</view>
+
+
+</view>
+</view>
+</view>
+

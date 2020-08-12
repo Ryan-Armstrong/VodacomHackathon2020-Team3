@@ -21,3 +21,11 @@ page {
   background:rgb(244,244,244);
   font-family: 'VodafoneRg';
 }
+
+.toolBarText {
+  position: relative;
+  font-family: VodafoneRg-Regular;
+  font-size: 20px;
+  height: 56px;
+  width: 342px;
+}
