@@ -1,3 +1,3 @@
 <view>
-  this is a blank page
+  <bundle bundle="15GB" price="199" promotion="149" info="best deal"></bundle>
 </view>
