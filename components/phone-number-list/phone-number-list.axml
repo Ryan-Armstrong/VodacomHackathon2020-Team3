@@ -8,7 +8,6 @@
 
            <text style="color: #888; font-size: 14px; margin-right: 8px;  ">{{item.name}} {{" \n "}}{{item.number}} </text>
 
-           <!-- <text >{{"\n"+item.number}} </text> -->
 
             <am-checkbox value="{{item.name}}" checked="{{item.checked}}" disabled="{{item.disabled}}" 
             style="margin-right: 8px;" />
@@ -17,7 +16,7 @@
         </checkbox-group>
       </view>
       <view style="margin-top: 10px;">
-        <button type="primary" size="mini" formType="submit">submit</button>
+      <image class="icAddPlus" src="/assets/images/icAddPlus.png" onTap="onAddNumber"/>
       </view>
     </view>
   </form>
