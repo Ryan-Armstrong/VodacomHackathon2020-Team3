@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "bundle": "/components/bundle/bundle"
+  }
+}

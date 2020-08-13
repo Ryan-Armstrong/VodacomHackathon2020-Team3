@@ -1,7 +1,5 @@
 {
-  "pages": [
-    "pages/index/index"
-  ],
+  "pages": ["pages/buyBundle/buyBundle", "pages/index/index"],
   "window": {
     "defaultTitle": "My App"
   }

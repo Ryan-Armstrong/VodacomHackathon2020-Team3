@@ -1,0 +1,11 @@
+<view>
+  <checkbox-group class="filterContainer" onChange="onChecked">
+    <label a:for="{{filters}}" a:for-item="item" class="filterItem" a:key="*this">
+      <checkbox value="{{item.name}}" checked="{{item.selected}}" />
+      <text>{{item.name}}</text>
+    </label>
+  </checkbox-group>
+  <view class="container" a:for="{{displayedBundles}}" a:for-item="bundle" a:key="*this">
+    <bundle bundle="{{bundle.bundle}}" price="{{bundle.price}}" promotion="{{bundle.promotion}}" info="{{bundle.info}}"></bundle>
+  </view>
+</view>

@@ -1,12 +1,12 @@
 <view class="card">
-  <view class="mainText"> 
+  <text class="mainText"> 
       {{bundle}}
-  </view>
+  </text>
   <view class="divider"></view>
-  <view class="subText" a:if="{{promotion==null}}">
+  <text class="subText" a:if="{{promotion==null}}">
     R{{price}}
-  </view>
-  <view a:if="{{promotion!=null}}">
+  </text>
+  <view class="promoContainter" a:if="{{promotion!=null}}">
     <text class="promo">R{{promotion}}</text>
     <text class="promoText"> was</text>
     <text class="promoStrike"> R{{price}}</text>
@@ -14,3 +14,4 @@
   <view class="info">
   {{info}}
   </view>
+</view>
