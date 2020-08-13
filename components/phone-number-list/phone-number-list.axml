@@ -1,3 +1,24 @@
-<view>
-  New Component
+<view style="padding: 16px; background-color: #fff;">
+  <form onSubmit="onSubmit" onReset="onReset">
+    <view>
+   
+      <view>
+        <checkbox-group name="libs">
+          <label a:for="{{phoneNumbers}}" style="display: flex; align-items: center; height: 80px;">
+
+           <text style="color: #888; font-size: 14px; margin-right: 8px;  ">{{item.name}} {{" \n "}}{{item.number}} </text>
+
+           <!-- <text >{{"\n"+item.number}} </text> -->
+
+            <am-checkbox value="{{item.name}}" checked="{{item.checked}}" disabled="{{item.disabled}}" 
+            style="margin-right: 8px;" />
+           
+          </label>
+        </checkbox-group>
+      </view>
+      <view style="margin-top: 10px;">
+        <button type="primary" size="mini" formType="submit">submit</button>
+      </view>
+    </view>
+  </form>
 </view>

@@ -1,3 +1,10 @@
 {
-  "component": true
+  "component": true,
+
+  "defaultTitle": "AntUI Component Library",
+  "usingComponents": {
+    "list": "mini-antui/es/list/index",
+    "list-item": "mini-antui/es/list/list-item/index",
+    "am-checkbox": "mini-antui/es/am-checkbox/index"
+  }
 }

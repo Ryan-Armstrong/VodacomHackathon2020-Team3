@@ -1,0 +1,13 @@
+/* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_todo */
+
+.icAddPlus {
+  /* position: absolute; */
+  /* left: 36pt; */
+  /* right: 271pt; */
+  width: 30pt;
+  height: 30pt;
+  margin-top: 216pt;
+  margin-right: 294pt;
+  margin-left: 36pt;
+  margin-bottom: 380pt;
+}

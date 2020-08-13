@@ -1,5 +1,8 @@
 <view class="toolbar"  >
 <heading/>
+<phone-number-list/>
+<!-- <am-checkbox/> -->
+<footer value= "footer"/>
 <!-- <view class="bounds">
 <view class="uxDesign">
   <text class="toolBarText">I'm buying for</text>
