@@ -15,9 +15,25 @@
           </label>
         </checkbox-group>
       </view>
-      <view style="margin-top: 10px;">
-      <image class="icAddPlus" src="/assets/images/icAddPlus.png" onTap="onAddNumber"/>
+      <!-- <view class="image-text-container">
+
+      <view>
+        <image class="icAddPlus" src="/assets/images/icAddPlus.png" onTap="onAddNumber">
       </view>
-    </view>
+         
+    <text class="textAddNumber">text</text>
+      </view> -->
+  
   </form>
+
+  </view>
+      <view class='container2'>
+		<view>
+			<image  src="/assets/images/icAddPlus.png" onTap="onAddNumber" class='iconDetails'>
+		</view>	
+	<view style='margin-left:70px; margin-top:10px;'>
+
+	<text style="font-size:1.25em">Add new number</text>
+	</view>
+</view>
 </view>

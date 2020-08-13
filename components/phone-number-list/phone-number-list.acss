@@ -1,13 +1,45 @@
 /* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_todo */
 
 .icAddPlus {
-  position: relative;
+  /* position: relative;
   left: 20px;
-  right: 271pt;
+  right: 271pt; */
   width: 30pt;
   height: 30pt;
   /* margin-top: 216pt; */
-  margin-right: 294pt;
+  /* margin-right: 294pt; */
   /* margin-left: 36pt; */
   /* margin-bottom: 380pt; */
+}
+
+.textAddNumber {
+  margin-left: 87pt;
+  margin-right: 89pt;
+  margin-top: 217pt;
+  margin-bottom: 26pt;
+  width: 184pt;
+  height: 22pt;
+}
+
+.image-text-container {
+  width: 100%;
+  height: auto;
+  padding: 1%;
+}
+
+.iconDetails {
+  margin-left: 2%;
+  float: left;
+  height: 40px;
+  width: 40px;
+}
+
+.container2 {
+  width: 100%;
+  height: auto;
+  padding: 1%;
+}
+
+h4 {
+  margin: 0px;
 }
