@@ -37,9 +37,17 @@
 .container2 {
   width: 100%;
   height: auto;
-  padding: 1%;
 }
 
-h4 {
-  margin: 0px;
+.rectangle {
+  padding: 18px;
+  background-color: rgb(255, 255, 255);
+  width: 360pt;
+  height: 265pt;
+}
+
+.parent {
+  width: 360pt;
+  height: 626pt;
+  background-color: rgb(255, 255, 255)
 }
