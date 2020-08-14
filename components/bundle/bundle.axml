@@ -1,4 +1,5 @@
 <view class="card" onTap="onClickBundle">
+  <view class="banner" a:if="{{promotion != null}}">ON SPECIAL</view>
   <text class="mainText"> 
       {{bundle}}
   </text>
