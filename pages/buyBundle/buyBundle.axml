@@ -1,11 +1,19 @@
-<view>
-  <checkbox-group class="filterContainer" onChange="onChecked">
-    <label a:for="{{filters}}" a:for-item="item" class="filterItem" a:key="*this">
-      <checkbox value="{{item.name}}" checked="{{item.selected}}" />
-      <text>{{item.name}}</text>
-    </label>
-  </checkbox-group>
-  <view class="container" a:for="{{displayedBundles}}" a:for-item="bundle" a:key="*this">
-    <bundle bundle="{{bundle.bundle}}" price="{{bundle.price}}" promotion="{{bundle.promotion}}" info="{{bundle.info}}"></bundle>
+<view class="screen-container">
+  <!--<checkbox-group class="filterContainer" onChange="onChecked"><label a:for="{{filters}}" a:for-item="item" class="filterItem" a:key="*this"><checkbox value="{{item.name}}" checked="{{item.selected}}" /><text>{{item.name}}</text></label></checkbox-group>
+-->
+  <text class="text">To use within</text>
+  <view class="filterContainer">
+    <view a:for="{{filters}}" a:for-item="item" onTap="onChecked" a:key="*this" id="{{item.name}}">
+      <view a:if="{{item.selected}}" class="filterItemSelected">
+        <text id="filter_{{index}}">{{item.displayName}}</text>
+      </view>
+      <view a:if="{{!item.selected}}" class="filterItemUnselected">
+        <text id="filter_{{index}}">{{item.displayName}}</text>
+      </view>
+    </view>
   </view>
+  <scroll-view class="bundle-container" scroll-y="{{true}}">
+    <bundle a:for="{{displayedBundles}}" a:for-item="bundle" a:key="*this" validity="{{validity}}" type="{{bundle.type}}" bundle="{{bundle.bundle}}" price="{{bundle.price}}" promotion="{{bundle.promotion}}" info="{{bundle.info}}"></bundle>
+  </scroll-view>
+  <button class="purchase-button" size="default" type="primary" onTap="clickBuyBundleButton">Buy Bundle</button>
 </view>

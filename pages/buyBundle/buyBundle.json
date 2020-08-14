@@ -1,4 +1,5 @@
 {
+  "defaultTitle": "Buy Bundle",
   "usingComponents": {
     "bundle": "/components/bundle/bundle"
   }

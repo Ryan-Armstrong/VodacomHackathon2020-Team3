@@ -8,7 +8,7 @@
   border-radius: 6pt;
   resize: none;
   box-sizing: border-box;
-  width: 150px;
+  width: 145px;
   height: 160px;
   float: left;
   flex-direction: column;
@@ -23,7 +23,7 @@
 }
 
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 red;
 }
 
 .image {

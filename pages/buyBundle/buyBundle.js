@@ -1,62 +1,79 @@
+const app = getApp();
+
 Page({
   data: {
+    selectedFilterColor: "#4A4D4E",
+    unselectedFilterColor: "#F4F4F4",
+    appliedFilterColor: "#F4F4F4",
     filters: [
-      { name: "data", displayName: "Data", selected: false },
-      { name: "airtime", displayName: "Airtime", selected: false },
-      { name: "ticket", displayName: "Ticket", selected: false },
-      { name: "something", displayName: "Something", selected: false },
-      { name: "another", displayName: "Another", selected: false }
+      { name: "30days", displayName: "30 Days", selected: false },
+      { name: "untilMidnight", displayName: "Until Midnight", selected: false },
+      { name: "1hour", displayName: "1 Hour", selected: false }
     ],
     masterBundles: [
       {
-        bundle: "15GB",
-        price: "199",
-        promotion: "149",
-        info: "best deal",
-        type: "data"
+        bundle: "1GB",
+        price: "12",
+        promotion: null,
+        info: null,
+        type: "data",
+        validity: "1hour"
       },
       {
         bundle: "1GB",
-        price: "99",
+        price: "29",
+        promotion: null,
+        info: null,
+        type: "data",
+        validity: "untilMidnight"
+      },
+      {
+        bundle: "1GB",
+        price: "115",
+        promotion: "99",
+        info: null,
+        type: "data",
+        validity: "30days"
+      },
+      {
+        bundle: "250MB",
+        price: "59",
         promotion: "49",
-        info: "second best deal",
-        type: "data"
+        info: null,
+        type: "data",
+        validity: "30days"
+      },
+      {
+        bundle: "1.5GB",
+        price: "149",
+        promotion: "129",
+        info: null,
+        type: "data",
+        validity: "30days"
+      },
+      {
+        bundle: "500MB",
+        price: "79",
+        promotion: null,
+        info: null,
+        type: "data",
+        validity: "30days"
+      },
+      {
+        bundle: "3GB",
+        price: "229",
+        promotion: null,
+        info: null,
+        type: "data",
+        validity: "30days"
       },
       {
         bundle: "5GB",
-        price: "299",
+        price: "349",
         promotion: null,
         info: null,
-        type: "data"
-      },
-      {
-        bundle: "10GB",
-        price: "499",
-        promotion: null,
-        info: null,
-        type: "data"
-      },
-
-      {
-        bundle: "R300",
-        price: "149",
-        promotion: "99",
-        info: "best price",
-        type: "airtime"
-      },
-      {
-        bundle: "R200",
-        price: "99",
-        promotion: null,
-        info: null,
-        type: "airtime"
-      },
-      {
-        bundle: "R500",
-        price: "350",
-        promotion: null,
-        info: null,
-        type: "airtime"
+        type: "data",
+        validity: "30days"
       }
     ],
     displayedBundles: []
@@ -75,24 +92,32 @@ Page({
 
   onChecked(e) {
     // Modify global data
-    const checkedFilters = e.detail.value;
+    const checkedFilters = e.currentTarget.id;
     this.data.filters = this.data.filters.map(filter => ({
       ...filter,
       selected: checkedFilters.indexOf(filter.name) > -1
     }));
 
+    const newFilters = this.data.filters;
     let newDisplayBundles = [];
 
     for (var i of this.data.masterBundles) {
-      if (checkedFilters.includes(i.type)) {
-        newDisplayBundles.push(i);
+      for (var filter of this.data.filters) {
+        if (filter.selected == true) {
+          if (i.validity == filter.name) {
+            newDisplayBundles.push(i);
+          }
+        }
       }
     }
 
     this.setData({
-      displayedBundles: newDisplayBundles
+      displayedBundles: newDisplayBundles,
+      filters: newFilters
     });
+  },
 
-    console.log(newDisplayBundles);
+  clickBuyBundleButton() {
+    console.log(app.selectedBundle);
   }
 });
