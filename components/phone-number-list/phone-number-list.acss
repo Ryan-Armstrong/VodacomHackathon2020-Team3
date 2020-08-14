@@ -46,11 +46,11 @@
   height: 265pt;
 }
 
-.parent {
+/* .parent {
   width: 360pt;
   height: 626pt;
   background-color: rgb(255, 255, 255)
-}
+} */
 
 label {
   padding: 12px 30px;
@@ -70,4 +70,18 @@ checkbox {
   height: 24px;
   margin-left: 190px;
   margin-right: 31px;
+}
+
+/* 
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  background-color: DodgerBlue;
+} */
+
+.flex-container>view {
+  background-color: #f1f1f1;
+  margin: 0px;
+  padding: 20px;
+  font-size: 30px;
 }
