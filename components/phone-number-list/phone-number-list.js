@@ -53,5 +53,11 @@ Component({
   didMount() {},
   didUpdate() {},
   didUnmount() {},
-  methods: {}
+  methods: {
+    onChange(e) {
+      my.alert({
+        title: `You are selecting the framework ${e.detail.value}`
+      });
+    }
+  }
 });
