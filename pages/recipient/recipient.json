@@ -1,4 +1,5 @@
-{
+{ 
+  "defaultTitle":"I'm buying for",
   "usingComponents": {
     "heading": "/components/customheading/customheading",
     "phone-number-list": "/components/phone-number-list/phone-number-list",

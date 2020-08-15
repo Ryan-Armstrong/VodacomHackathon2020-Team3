@@ -38,6 +38,7 @@ Component({
 
       const newRecipient = { name: "Lerato", number: "078 427 9565"}
       phoneNumbers.unshift(newRecipient);
+      
       console.log(phoneNumbers)
       this.setData({ isShowInput: false, phoneNumbers });
 

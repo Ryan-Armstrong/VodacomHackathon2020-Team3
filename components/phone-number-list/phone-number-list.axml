@@ -1,6 +1,7 @@
 <view class="parent">
   
 <view class="rectangle">
+<view a:if="{{phoneNumbers.length>=10}}">this will be my search icon </view>
   <form onSubmit="onSubmit" onReset="onReset">
   
       <scroll-view scroll-y="{{true}}" style="height: 200px;" onScrollToUpper="upper" onScrollToLower="lower" onScroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
@@ -28,19 +29,38 @@
 </view>
 
   <view a:else>
-   <view class='container2'>
+
+<view a:if="{{phoneNumbers.length> 3}}">
+		<view>
+			<image  alt="add" src="/assets/images/icAddPlus.png" onTap="isShowInput" class='iconDetails'/>
+		</view>	
+
+	<view style='margin-left:70px; margin-top:10px;'>
+	<text style="font-size:1.25em">Buy for another Number</text>
+	</view>
+</view>
+
+<!-- <view a:if="{{phoneNumbers.length> 3 && phoneNumbers.length <10}}">
+		<view>
+			<image  alt="add" src="/assets/images/icAddPlus.png" onTap="isShowInput" class='iconDetails'/>
+		</view>	
+
+	<view style='margin-left:70px; margin-top:10px;'>
+	<text style="font-size:1.25em">Buy for another Number</text>
+	</view>
+</view> -->
+
+  <view class='container2'  a:elif="{{phoneNumbers.length<=3}}">
 
 		<view>
 			<image  alt="add" src="/assets/images/icAddPlus.png" onTap="isShowInput" class='iconDetails'/>
 		</view>	
+
 	<view style='margin-left:70px; margin-top:10px;'>
 	<text style="font-size:1.25em">Add new number</text>
 	</view>
 </view>
-  </view>
 
-
-
-
-  </view>
+</view>
+</view>
 </view>
