@@ -24,6 +24,7 @@
 <view class="flex-container">
 <view a:if="{{isShowInput}}">
  <input placeholder="enter number" hidden />
+ <button type="primary" onTap="onProceed">Proceed</button>
 </view>
 
   <view a:else>

@@ -39,12 +39,12 @@
   height: auto;
 }
 
-.rectangle {
+/* .rectangle {
   padding: 18px;
   background-color: rgb(255, 255, 255);
   width: 360pt;
   height: 265pt;
-}
+} */
 
 /* .parent {
   width: 360pt;
