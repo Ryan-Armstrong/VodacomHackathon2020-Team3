@@ -13,7 +13,7 @@
     </view>
   </view>
   <scroll-view class="bundle-container" scroll-y="{{true}}">
-    <bundle a:for="{{displayedBundles}}" a:for-item="bundle" a:key="*this" validity="{{validity}}" type="{{bundle.type}}" bundle="{{bundle.bundle}}" price="{{bundle.price}}" promotion="{{bundle.promotion}}" info="{{bundle.info}}"></bundle>
+    <bundle a:for="{{displayedBundles}}" a:for-item="bundle" a:key="*this" validity="{{bundle.validity}}" type="{{bundle.type}}" bundle="{{bundle.bundle}}" price="{{bundle.price}}" promotion="{{bundle.promotion}}" info="{{bundle.info}}"></bundle>
   </scroll-view>
   <button class="purchase-button" size="default" type="primary" onTap="clickBuyBundleButton">Buy Bundle</button>
 </view>

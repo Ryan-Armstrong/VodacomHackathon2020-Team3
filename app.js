@@ -4,7 +4,8 @@ App({
     price: null,
     promotion: null,
     info: null,
-    type: null
+    type: null,
+    validity: null
   },
 
   onLaunch(options) {
