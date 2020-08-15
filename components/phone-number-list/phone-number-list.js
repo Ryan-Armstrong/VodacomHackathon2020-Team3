@@ -37,7 +37,7 @@ Component({
       const phoneNumbers = this.data.phoneNumbers;
 
       const newRecipient = { name: "Lerato", number: "078 427 9565"}
-      phoneNumbers.push(newRecipient);
+      phoneNumbers.unshift(newRecipient);
       console.log(phoneNumbers)
       this.setData({ isShowInput: false, phoneNumbers });
 
