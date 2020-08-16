@@ -3,13 +3,12 @@ Component({
 
   data: { 
     value: 'food',
-    phoneNumbers: [
+    contacts: [
       { name: "Kanya", number: "081 317 1046" },
       { name: "Neo", number: "081 317 2014" },
       { name: "Kea", number: "081 317 2051" },
-      
-  
     ],
+     tempcontacts: [],
     isShowInput: false
   },
   onItemClick(ev) {
@@ -40,35 +39,34 @@ Component({
 
     onProceed() {
 
-      const phoneNumbers = this.data.phoneNumbers;
+      const contacts = this.data.contacts;
 
       const newRecipient = { name: "Lerato", number: "078 427 9565"}
-      phoneNumbers.unshift(newRecipient);
+      contacts.unshift(newRecipient);
 
-      console.log(phoneNumbers)
-      this.setData({ isShowInput: false, phoneNumbers });
+      console.log(contacts)
+      this.setData({ isShowInput: false, contacts });
 
     },
-
-
-checkAdult(value) {
-  return value >= 18;
-}
-
-,
      handleInput(value) {
-
-
         this.setData({
           value,
         });
       },
 
       handleClear(value) {
-        this.setData({
-          value: '',
+        // filter --> contacts
+        //
+        // on clear go back to old array
+       var tempcontacts =this.data.tempcontacts;
        
-        });
+       console.log(tempcontacts)
+       this.setData({contacts: tempcontacts, value: " "})
+        //   value: '',
+
+        //   contacts: tempcontacts
+       
+        // });
       },
 
       handleFocus() {},
@@ -82,18 +80,16 @@ checkAdult(value) {
       },
 
       handleSubmit(value) {
-      var phoneNumbers = this.data.phoneNumbers;
-      var lNames= phoneNumbers.filter(function(contact){ return contact.name ==value})
-       console.log(lNames);
-      
-       this.setData({
-          value: '',
-       phoneNumbers: lNames
-        });
+      var contacts = this.data.contacts;
+      var filteredContacts= contacts.filter(function(contact){ return contact.name ==value})
 
-        // my.alert({
-        //   content: value,
-        // });
+  
+      if(filteredContacts.length >0){
+       this.setData({
+        tempcontacts: contacts,
+       contacts: filteredContacts
+        });
+      }
       },
 
   }

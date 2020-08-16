@@ -1,7 +1,7 @@
 Page({
   data: {
     closeImage: "../../assets/image/icCloseWhite.png",
-    phoneNumbers: [{ name: "Me", number: "082 317 1046" }]
+    contacts: [{ name: "Me", number: "082 317 1046" }]
   },
   onLoad() {
     // console.log(date);
@@ -15,9 +15,9 @@ Page({
    */
   onAddNumber() {
     let instance = { name: "Rato", number: "082 317 1046" };
-    this.data.phoneNumbers.push(instance);
-    this.setData({ phoneNumbers: this.data.phoneNumbers });
-    console.log(this.data.phoneNumbers);
+    this.data.contacts.push(instance);
+    this.setData({ contacts: this.data.contacts });
+    console.log(this.data.contacts);
     console.log("add number");
   }
 });

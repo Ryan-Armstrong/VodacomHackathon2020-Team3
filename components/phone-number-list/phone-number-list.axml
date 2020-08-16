@@ -1,7 +1,7 @@
 <view class="parent">
   
 <view class="rectangle">
-    <view  a:if="{{phoneNumbers.length>=1}}">
+    <view  a:if="{{contacts.length>=1}}">
       <search-bar
         value="{{value}}"
         placeholder="Search "
@@ -21,7 +21,7 @@
       <scroll-view scroll-y="{{true}}" style="height: 200px;" onScrollToUpper="upper" onScrollToLower="lower" onScroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
       
         <checkbox-group name="libs" class="inputGroup" onChange="onChange">
-          <label a:for="{{phoneNumbers}}">
+          <label a:for="{{contacts}}">
            <text >{{item.name}} {{" \n "}}{{item.number}} </text>
 
             <checkbox class="checkbox" value="{{item.name}}" checked="{{item.checked}}" disabled="{{item.disabled}}"/>
@@ -43,7 +43,7 @@
 
   <view a:else>
 
-<view a:if="{{phoneNumbers.length> 3}}">
+<view a:if="{{contacts.length> 3}}">
 		<view>
 			<image  alt="add" src="/assets/images/icAddPlus.png" onTap="isShowInput" class='iconDetails'/>
 		</view>	
@@ -53,7 +53,7 @@
 	</view>
 </view>
 
-<!-- <view a:if="{{phoneNumbers.length> 3 && phoneNumbers.length <10}}">
+<!-- <view a:if="{{contacts.length> 3 && contacts.length <10}}">
 		<view>
 			<image  alt="add" src="/assets/images/icAddPlus.png" onTap="isShowInput" class='iconDetails'/>
 		</view>	
@@ -63,7 +63,7 @@
 	</view>
 </view> -->
 
-  <view class='container2'  a:elif="{{phoneNumbers.length<=3}}">
+  <view class='container2'  a:elif="{{contacts.length<=3}}">
 
 		<view>
 			<image  alt="add" src="/assets/images/icAddPlus.png" onTap="isShowInput" class='iconDetails'/>
