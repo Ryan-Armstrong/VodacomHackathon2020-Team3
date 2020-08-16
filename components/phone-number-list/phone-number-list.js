@@ -55,18 +55,10 @@ Component({
       },
 
       handleClear(value) {
-        // filter --> contacts
-        //
-        // on clear go back to old array
        var tempcontacts =this.data.tempcontacts;
-       
-       console.log(tempcontacts)
+     if( tempcontacts.length >0){
        this.setData({contacts: tempcontacts, value: " "})
-        //   value: '',
-
-        //   contacts: tempcontacts
-       
-        // });
+      }
       },
 
       handleFocus() {},
@@ -81,7 +73,7 @@ Component({
 
       handleSubmit(value) {
       var contacts = this.data.contacts;
-      var filteredContacts= contacts.filter(function(contact){ return contact.name ==value})
+      var filteredContacts= contacts.filter(function(contact){ return contact.name.toUpperCase() ==value.toUpperCase()})
 
   
       if(filteredContacts.length >0){
