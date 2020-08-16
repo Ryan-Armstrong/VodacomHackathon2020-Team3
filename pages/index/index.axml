@@ -1,3 +1,11 @@
 <view>
-  this is a blank page
+  <view>
+  </view>
+  <view class="container">
+    <bundle bundle="15GB" price="199" promotion="149" info="best deal"></bundle>
+    <bundle bundle="1GB" price="99" promotion="49" info="second best deal"></bundle>
+    <bundle bundle="5GB" price="299"></bundle>
+    <bundle bundle="10GB" price="499"></bundle>
+    <bundle bundle="20GB" price="599"></bundle>
+  </view>
 </view>
