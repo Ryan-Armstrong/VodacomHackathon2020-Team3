@@ -9,7 +9,8 @@ Component({
       { name: "Kea", number: "081 317 2051" },
     ],
      tempcontacts: [],
-    isShowInput: false
+    isShowInput: false,
+    inputValue: " "
   },
   onItemClick(ev) {
     my.alert({
@@ -41,14 +42,23 @@ Component({
 
       const contacts = this.data.contacts;
 
-      const newRecipient = { name: "Lerato", number: "078 427 9565"}
+      const newRecipient = { name: "unknown", number: this.data.inputValue}
       contacts.unshift(newRecipient);
 
       console.log(contacts)
       this.setData({ isShowInput: false, contacts });
 
     },
+
+    onEnterNumber(e){
+        console.log(e.detail.value)
+         this.setData({
+      inputValue: e.detail.value,
+    });
+    },
+
      handleInput(value) {
+       console.log(value)
         this.setData({
           value,
         });

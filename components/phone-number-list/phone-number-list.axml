@@ -37,7 +37,7 @@
 
 <view class="flex-container">
 <view a:if="{{isShowInput}}">
- <input placeholder="enter number" hidden />
+ <input placeholder="enter number" hidden   onInput="onEnterNumber"/>
  <button type="primary" onTap="onProceed">Proceed</button>
 </view>
 
