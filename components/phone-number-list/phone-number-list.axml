@@ -22,11 +22,16 @@
       
         <checkbox-group name="libs" class="inputGroup" onChange="onChange">
           <label a:for="{{contacts}}">
+          
+          
            <text >{{item.name}} {{" \n "}}{{item.number}} </text>
 
             <checkbox class="checkbox" value="{{item.name}}" checked="{{item.checked}}" disabled="{{item.disabled}}"/>
-           
+           <view class= "hr">
+
+          </view>
           </label>
+
         </checkbox-group>
     </scroll-view>
 
@@ -52,16 +57,6 @@
 	<text style="font-size:1.25em">Buy for another Number</text>
 	</view>
 </view>
-
-<!-- <view a:if="{{contacts.length> 3 && contacts.length <10}}">
-		<view>
-			<image  alt="add" src="/assets/images/icAddPlus.png" onTap="isShowInput" class='iconDetails'/>
-		</view>	
-
-	<view style='margin-left:70px; margin-top:10px;'>
-	<text style="font-size:1.25em">Buy for another Number</text>
-	</view>
-</view> -->
 
   <view class='container2'  a:elif="{{contacts.length<=3}}">
 

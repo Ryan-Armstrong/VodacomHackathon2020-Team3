@@ -2,13 +2,14 @@ Component({
   mixins: [],
 
   data: { 
-    value: 'food',
+    value: '',
     contacts: [
       { name: "Kanya", number: "081 317 1046" },
       { name: "Neo", number: "081 317 2014" },
       { name: "Kea", number: "081 317 2051" },
     ],
      tempcontacts: [],
+     filteredContacts: [],
     isShowInput: false,
     inputValue: " "
   },
@@ -19,7 +20,12 @@ Component({
   },
   props: {},
 
-  didMount() {},
+  didMount() {
+    var contacts = this.data.contacts;
+    var tempContacts = contacts.filter(() => true)
+    this.setData({tempContacts:tempContacts});
+
+  },
 
   didUpdate() {},
   
@@ -45,20 +51,17 @@ Component({
       const newRecipient = { name: "unknown", number: this.data.inputValue}
       contacts.unshift(newRecipient);
 
-      console.log(contacts)
       this.setData({ isShowInput: false, contacts });
 
     },
 
     onEnterNumber(e){
-        console.log(e.detail.value)
          this.setData({
       inputValue: e.detail.value,
     });
     },
 
      handleInput(value) {
-       console.log(value)
         this.setData({
           value,
         });
@@ -73,8 +76,6 @@ Component({
 
       handleFocus() {},
 
-      handleBlur() {},
-
       handleCancel() {
         this.setData({
           value: '',
@@ -83,17 +84,30 @@ Component({
 
       handleSubmit(value) {
       var contacts = this.data.contacts;
-      console.log(contacts)
-      var filteredContacts= contacts.filter(function(contact){ return contact.name.toUpperCase().startsWith(value.toUpperCase())})
+      var tempContacts = this.data.tempContacts;
 
-  
-      if(filteredContacts.length >0){
-       this.setData({
-        tempcontacts: contacts,
-       contacts: filteredContacts
+      var filteredContacts= tempContacts.filter(function(contact){
+         return contact.name.toUpperCase().startsWith(value.toUpperCase())});      
+           if(value==='' || filteredContacts.length==0 ){
+         this.setData({
+       contacts: tempContacts,
         });
-      }
+       }
+       else{
+        this.setData({
+       contacts: filteredContacts,
+        });
+  
+       }      
       },
 
   }
 });
+
+
+
+
+
+
+
+

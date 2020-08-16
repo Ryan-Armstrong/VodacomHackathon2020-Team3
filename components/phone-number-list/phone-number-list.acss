@@ -65,11 +65,17 @@ label {
   overflow: hidden;
 }
 
-checkbox {
+.checkbox {
   width: 24px;
   height: 24px;
   margin-left: 190px;
   margin-right: 31px;
+border: 2px solid #ddd;
+}
+
+.hr{
+ 
+    border-top: 1px solid #bbb;
 }
 
 /* 
