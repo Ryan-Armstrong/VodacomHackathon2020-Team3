@@ -1,18 +1,16 @@
-<view class="card" onTap="onClickBundle">
-  <view class="banner" a:if="{{promotion != null}}">ON SPECIAL</view>
-  <text class="mainText"> 
-      {{bundle}}
-  </text>
-  <view class="divider"></view>
-  <text class="subText" a:if="{{promotion==null}}">
-    R{{price}}
-  </text>
-  <view class="promoContainter" a:if="{{promotion!=null}}">
-    <text class="promo">R{{promotion}}</text>
-    <text class="promoText"> was</text>
-    <text class="promoStrike"> R{{price}}</text>
-  </view>
-  <view class="info">
-  {{info}}
+<view class="card-container">
+  <view class="card" onTap="onClickBundle">
+    <view class="banner">
+      <view class="banner-text" a:if="{{promotion != null}}">ON SPECIAL</view>
+    </view>
+    <text class="mainText">{{bundle}}</text>
+    <view class="divider"></view>
+    <text class="subText" a:if="{{promotion==null}}">R{{price}}</text>
+    <view class="promoContainter" a:if="{{promotion!=null}}">
+      <text class="promo">R{{promotion}}</text>
+      <text class="promoText"> was</text>
+      <text class="promoStrike"> R{{price}}</text>
+    </view>
+    <view class="info">{{info}}</view>
   </view>
 </view>

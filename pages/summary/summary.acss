@@ -1,0 +1,151 @@
+.summary-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.purchase-summary {
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(to right, rgb(169, 0, 0), rgb(230, 0, 0), rgb(255, 0, 0));
+  border-radius: 0px 0px 8px 8px;
+  color: white;
+}
+
+.promo-banner {
+  display: flex;
+}
+
+.promo-banner-text {
+  background-color: rgb(235, 151, 0);
+  border-radius: 0px 0px 6px;
+  padding: 4px 2%;
+  font-size: 9pt;
+  font-weight: bold;
+  color: white;
+}
+
+.purchase-summary-text {
+  font-size: 21pt;
+  align-self: center;
+  padding: 2px;
+}
+
+.main-product-size {
+  font-family: 'VodafoneRgBd';
+  font-size: 30pt;
+  align-self: center;
+  padding: 2px;
+}
+
+.product-info-list {
+  align-self: center;
+  font-size: 14pt;
+  padding: 2px;
+}
+
+.product-info {
+  padding: 1px;
+}
+
+.product-category-text {
+  font-family: 'VodafoneRgBd';
+}
+
+.product-validity-text {}
+
+.product-receiver-text {
+  font-size: 14pt;
+  align-self: center;
+}
+
+.hline-bottom {
+  padding: 5px;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  width: 80%;
+  align-self: center;
+  opacity: 0.3;
+}
+
+.order-total {
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+.order-total-text {
+  flex-grow: 1;
+  padding: 5px;
+  align-self: center;
+  font-size: 16pt;
+}
+
+.order-amount-text {
+  flex-grow: 1;
+  margin: 5%;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 22pt;
+}
+
+.purchase-repeat {
+  flex-grow: 1;
+  display: flex;
+  margin: 5%;
+  flex-direction: column;
+}
+
+.purchase-repeat-text {
+  color: rgb(103, 103, 103);
+  font-family: 'VodafoneRgBd';
+  font-size: 16pt;
+}
+
+.purchase-repeat-info {
+  display: flex;
+}
+
+.purchase-repeat-info-text {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 2%;
+  color: rgb(102,102,102);
+  font-size: 14pt;
+  align-self: center;
+}
+
+.purchase-repeat-saving-text {
+  border: 2px solid red;
+  background: red;
+  width: 30pt;
+  height: 30pt;
+  border-radius: 50%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 8pt;
+}
+.purchase-repeat-checkbox {
+  display:flex;
+  align-self: center;
+  justify-content: center;
+  flex-grow: 1;
+  align-self: center;
+}
+
+.recommended-bundles {
+  flex-grow: 1;
+}
+
+.terms-and-conditions {
+  flex-grow: 1;
+}
+
+.buy-button {
+  background-color: red;
+  align-self: center;
+  width: 100%;
+  border: none;
+}

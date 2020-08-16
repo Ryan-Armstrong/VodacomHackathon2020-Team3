@@ -1,6 +1,9 @@
 {
-  "pages": ["pages/buyBundle/buyBundle", "pages/index/index"],
+  "pages": [
+    "pages/summary/summary",
+    "pages/buyBundle/buyBundle"
+  ],
   "window": {
-    "defaultTitle": "My App"
+    "defaultTitle": "Vodacom Bundles"
   }
 }

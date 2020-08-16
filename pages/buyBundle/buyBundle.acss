@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  background-color: rgb(244, 244, 244);
 }
 
 .purchase-button {
@@ -17,10 +16,8 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding: 10px;
-  align-content: space-around;
-  height: auto;
-  flex-grow: 1;
+  overflow-y:overlay; 
+  max-height:100%
 }
 
 .filterContainer {
@@ -28,56 +25,36 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding: 10px;
-  margin: 3px;
+  padding: 5px;
   align-content: space-around;
 }
 
-.filterItem {
-  margin: 5px;
-
-  height: 70rpx;
-  box-sizing: border-box;
-  border: 2px solid rgb(153, 153, 153);
-  border-radius: 14.5pt;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  /* white-space:nowrap; */
-  transition: border 0.2s;
-  align-content: center;
-  text-align: center;
-  color: #999999;
-  background-color: #f4f4f4;
-}
-
 .filterItemSelected {
-  margin: 5px;
+  display: flex;
+  justify-content: center;
+  margin: 1px;
   padding: 10px;
-  height: 70rpx;
   box-sizing: border-box;
   border: 2px solid rgb(153, 153, 153);
   border-radius: 14.5pt;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  /* white-space:nowrap; */
-  transition: border 0.2s;
-  text-align: center;
+  min-width: 50px;
+  width: fit-content;
+  margin-right: 5px;
   color: white;
   background-color: #4a4d4e;
 }
 
 .filterItemUnselected {
-  margin: 5px;
+  display: flex;
+  justify-content: center;
+  margin: 1px;
   padding: 10px;
-  height: 70rpx;
   box-sizing: border-box;
   border: 2px solid rgb(153, 153, 153);
   border-radius: 14.5pt;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  /* white-space:nowrap; */
-  transition: border 0.2s;
-  text-align: center;
+  min-width: 50px;
+  width: fit-content;
+  margin-right: 5px;
   color: #999999;
   background-color: #f4f4f4;
 }

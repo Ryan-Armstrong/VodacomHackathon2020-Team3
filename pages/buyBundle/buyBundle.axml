@@ -1,19 +1,16 @@
 <view class="screen-container">
-  <!--<checkbox-group class="filterContainer" onChange="onChecked"><label a:for="{{filters}}" a:for-item="item" class="filterItem" a:key="*this"><checkbox value="{{item.name}}" checked="{{item.selected}}" /><text>{{item.name}}</text></label></checkbox-group>
--->
   <text class="text">To use within</text>
   <view class="filterContainer">
-    <view a:for="{{filters}}" a:for-item="item" onTap="onChecked" a:key="*this" id="{{item.name}}">
-      <view a:if="{{item.selected}}" class="filterItemSelected">
+    <block a:for="{{filters}}" a:for-item="item" a:key="*this">
+      <view id="{{item.name}}" class="{{item.selected ? 'filterItemSelected' : 'filterItemUnselected'}}"  onTap="onChecked"> 
         <text id="filter_{{index}}">{{item.displayName}}</text>
       </view>
-      <view a:if="{{!item.selected}}" class="filterItemUnselected">
-        <text id="filter_{{index}}">{{item.displayName}}</text>
-      </view>
-    </view>
+    </block>
   </view>
-  <scroll-view class="bundle-container" scroll-y="{{true}}">
+  <view style="flex-grow:1; height:1px">
+  <view class="bundle-container" style="overflow-y:overlay; max-height:100%">
     <bundle a:for="{{displayedBundles}}" a:for-item="bundle" a:key="*this" validity="{{bundle.validity}}" type="{{bundle.type}}" bundle="{{bundle.bundle}}" price="{{bundle.price}}" promotion="{{bundle.promotion}}" info="{{bundle.info}}"></bundle>
-  </scroll-view>
+  </view >
+  </view>
   <button class="purchase-button" size="default" type="primary" onTap="clickBuyBundleButton">Buy Bundle</button>
 </view>

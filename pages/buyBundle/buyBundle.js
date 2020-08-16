@@ -6,6 +6,7 @@ Page({
     unselectedFilterColor: "#F4F4F4",
     appliedFilterColor: "#F4F4F4",
     filters: [
+      { name: "All", displayName: "All", selected: true },
       { name: "30days", displayName: "30 Days", selected: false },
       { name: "untilMidnight", displayName: "Until Midnight", selected: false },
       { name: "1hour", displayName: "1 Hour", selected: false }
@@ -101,20 +102,26 @@ Page({
     const newFilters = this.data.filters;
     let newDisplayBundles = [];
 
-    for (var i of this.data.masterBundles) {
-      for (var filter of this.data.filters) {
-        if (filter.selected == true) {
-          if (i.validity == filter.name) {
-            newDisplayBundles.push(i);
+    if (checkedFilters == 'All') {
+      this.setData({
+        displayedBundles: this.data.masterBundles,
+        filters: newFilters
+      });
+    } else {
+      for (var i of this.data.masterBundles) {
+        for (var filter of this.data.filters) {
+          if (filter.selected == true) {
+            if (i.validity == filter.name) {
+              newDisplayBundles.push(i);
+            }
           }
         }
       }
+      this.setData({
+        displayedBundles: newDisplayBundles,
+        filters: newFilters
+      });
     }
-
-    this.setData({
-      displayedBundles: newDisplayBundles,
-      filters: newFilters
-    });
   },
 
   clickBuyBundleButton() {
