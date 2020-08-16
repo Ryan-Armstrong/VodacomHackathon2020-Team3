@@ -1,7 +1,7 @@
 <view class="parent">
   
 <view class="rectangle">
-    <view  a:if="{{contacts.length>=1}}">
+    <view  a:if="{{contacts.length>=10}}">
       <search-bar
         value="{{value}}"
         placeholder="Search "
