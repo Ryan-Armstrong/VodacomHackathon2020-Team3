@@ -1,7 +1,21 @@
 <view class="parent">
   
 <view class="rectangle">
-<view a:if="{{phoneNumbers.length>=10}}">this will be my search icon </view>
+    <view  a:if="{{phoneNumbers.length>=1}}">
+      <search-bar
+        value="{{value}}"
+        placeholder="Search "
+        onInput="handleInput"
+        onClear="handleClear"
+        onFocus="handleFocus"
+        onBlur="handleBlur"
+        onCancel="handleCancel"
+        onSubmit="handleSubmit"
+        showCancelButton="{{false}}" />
+</view>
+
+<!-- List -->
+
   <form onSubmit="onSubmit" onReset="onReset">
   
       <scroll-view scroll-y="{{true}}" style="height: 200px;" onScrollToUpper="upper" onScrollToLower="lower" onScroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
@@ -10,8 +24,7 @@
           <label a:for="{{phoneNumbers}}">
            <text >{{item.name}} {{" \n "}}{{item.number}} </text>
 
-            <checkbox class="checkbox" value="{{item.name}}" checked="{{item.checked}}" disabled="{{item.disabled}}"
-             />
+            <checkbox class="checkbox" value="{{item.name}}" checked="{{item.checked}}" disabled="{{item.disabled}}"/>
            
           </label>
         </checkbox-group>
