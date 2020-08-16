@@ -14,5 +14,5 @@
       </view>
     </view>
   </view>
-  <button class="purchase-button"  onTap="clickBuyBundleButton">Buy Bundle</button>
+  <button class="purchase-button {{shake}}"  onTap="clickBuyBundleButton"><text>Buy Bundle<text></button>
 </view>

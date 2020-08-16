@@ -51,8 +51,15 @@ Page({
     app.selectedBundle = { isRecurring: false, ...selectedBundle.props.bundle, validityDisplayName: this.data.filters.filter(e => e.name == selectedBundle.props.bundle.validity)[0].displayName };
   },
   clickBuyBundleButton() {
-    console.log(app.selectedBundle);
-    my.navigateTo({ url: '../summary/summary' });
+    if (app.selectedBundle.bundle == null) {
+      this.setData({ shake: 'shake' });
+      setTimeout(() => {
+        this.setData({ shake: '' });
+      }, 250);
+    } else {
+      my.navigateTo({ url: '../summary/summary' });
+    }
+
   },
   saveRef(ref) {
     this.bundlesRef = [...this.bundlesRef, ref];

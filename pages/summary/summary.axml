@@ -55,8 +55,7 @@
         <bundle ref="saveRef" bundle="{{item}}"></bundle>
       </view>
     </block>
-    <!--<view class="card-container" onTap="selectBundle" id="1"><bundle ref="saveRef" category="Whatsapp Data" iconClass="fab fa-whatsapp" bundle="10G" price="12.00"></bundle></view><view class="card-container" onTap="selectBundle" id="2"><bundle ref="saveRef" category="Facebook Data" iconClass="fab fa-facebook-square" bundle="1GB" price="12.00" info="use within 7 days"></bundle></view> -->
   </view>
-  <view class="terms-and-conditions">By selecting ‘Buy now’ you agree to T's and Cs.</view>
+  <view class="terms-and-conditions">By clicking ‘Buy now’ you agree to T's and Cs.</view>
   <button class="buy-button" onTap="buyNow">Buy Now</button>
 </view>

@@ -48,6 +48,9 @@ Page({
       });
     }
   },
+  buyNow() {
+    my.reLaunch({url: '../order-status/order-status'});
+  },
   saveRef(ref) {
     this.recommendBundlesRef = [...this.recommendBundlesRef, ref];
   },

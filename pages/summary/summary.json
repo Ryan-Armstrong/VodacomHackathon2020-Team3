@@ -1,5 +1,6 @@
 {
   "defaultTitle": "Bundle Summary",
+  "navigationStyle": "custom",
   "usingComponents": {
     "bundle": "/components/bundle/bundle"
   }

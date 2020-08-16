@@ -10,6 +10,11 @@
   src: url(/assets/fonts/VodafoneRgBd.ttf);
 }
 
+@font-face {
+  font-family: VodafoneLt;
+  src: url(/assets/fonts/VodafoneLt.ttf);
+}
+
 page {
   flex: 1;
   display: flex;

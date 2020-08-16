@@ -13,7 +13,8 @@ App({
       type: "data",
       validity: "1hour",
       frequency: "Once-off",
-      categoryText: "Data bundle"
+      categoryText: "Data",
+      info: "Use within 1 hour"
     },
     {
       bundle: "1GB",
@@ -23,7 +24,8 @@ App({
       type: "data",
       validity: "untilMidnight",
       frequency: "Once-off",
-      categoryText: "Data bundle",
+      categoryText: "Data",
+      info: "Use until midnight",
       recommenedBundles: [
         {
           bundle: "1GB",
@@ -35,7 +37,7 @@ App({
           frequency: "Once-off",
           categoryText: "Netflix Data",
           validityDisplayName: "until midnight",
-          info:"Use until midnight"
+          info: "Use until midnight"
         },
         {
           bundle: "1GB",
@@ -47,7 +49,7 @@ App({
           frequency: "Once-off",
           categoryText: "Whatsapp Data",
           validityDisplayName: "until midnight",
-          info:"Use until midnight"
+          info: "Use until midnight"
         },
         {
           bundle: "1GB",
@@ -59,7 +61,7 @@ App({
           frequency: "Once-off",
           categoryText: "Facebook Data",
           validityDisplayName: "until midnight",
-          info:"Use until midnight"
+          info: "Use until midnight"
         }
       ]
     },
@@ -71,7 +73,8 @@ App({
       type: "data",
       validity: "30days",
       frequency: "Once-off",
-      categoryText: "Data bundle",
+      categoryText: "Data",
+      info: "Use within 30 days",
       recurringBundle: {
         frequency: "Recurring",
         price: 75,
@@ -88,7 +91,7 @@ App({
           frequency: "Once-off",
           categoryText: "Netflix Data",
           validityDisplayName: "7 days",
-          info:"Use within 7 days"
+          info: "Use within 7 days"
         },
         {
           bundle: "1GB",
@@ -100,7 +103,7 @@ App({
           frequency: "Once-off",
           categoryText: "Whatsapp Data",
           validityDisplayName: "7 days",
-          info:"Use within 7 days"
+          info: "Use within 7 days"
         },
         {
           bundle: "1GB",
@@ -112,7 +115,7 @@ App({
           frequency: "Once-off",
           categoryText: "Facebook Data",
           validityDisplayName: "7 days",
-          info:"Use within 7 days"
+          info: "Use within 7 days"
         }
       ]
     },
@@ -125,7 +128,8 @@ App({
       type: "data",
       validity: "30days",
       frequency: "Once-off",
-      categoryText: "Data bundle"
+      categoryText: "Data",
+      info: "Use within 30 days",
     },
     {
       bundle: "1.5GB",
@@ -136,7 +140,8 @@ App({
       type: "data",
       validity: "30days",
       frequency: "Once-off",
-      categoryText: "Data bundle",
+      categoryText: "Data",
+      info: "Use within 30 days",
       recurringBundle: {
         price: 100,
         saving: 29
@@ -150,7 +155,8 @@ App({
       type: "data",
       validity: "30days",
       frequency: "Once-off",
-      categoryText: "Data bundle"
+      categoryText: "Data",
+      info: "Use within 30 days"
     },
     {
       bundle: "3GB",
@@ -159,7 +165,8 @@ App({
       info: null,
       type: "data",
       validity: "30days",
-      categoryText: "Data bundle"
+      categoryText: "Data",
+      info: "Use within 30 days",
     },
     {
       bundle: "5GB",
@@ -169,7 +176,8 @@ App({
       type: "data",
       validity: "30days",
       frequency: "Once-off",
-      categoryText: "Data bundle"
+      categoryText: "Data",
+      info: "Use within 30 days",
     }
   ],
   onLaunch(options) {
