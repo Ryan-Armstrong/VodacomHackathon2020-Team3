@@ -7,6 +7,7 @@
         placeholder="Search "
         onInput="handleSubmit"
         onClear="handleClear"
+        
     
         onBlur="handleBlur"
         onCancel="handleCancel"
@@ -43,32 +44,20 @@
 <view class="flex-container">
 <view a:if="{{isShowInput}}">
  <input placeholder="enter number" hidden   onInput="onEnterNumber"/>
- <button type="primary" onTap="onProceed">Proceed</button>
+ <button onTap="onProceed"><view class=btnText>Proceed</view></button>
 </view>
 
   <view a:else>
 
-<view a:if="{{contacts.length> 3}}">
+<view >
 		<view>
 			<image  alt="add" src="/assets/images/icAddPlus.png" onTap="isShowInput" class='iconDetails'/>
 		</view>	
 
 	<view style='margin-left:70px; margin-top:10px;'>
-	<text style="font-size:1.25em">Buy for another Number</text>
+	<text class="btnAdd">Buy for another Number</text>
 	</view>
 </view>
-
-  <view class='container2'  a:elif="{{contacts.length<=3}}">
-
-		<view>
-			<image  alt="add" src="/assets/images/icAddPlus.png" onTap="isShowInput" class='iconDetails'/>
-		</view>	
-
-	<view style='margin-left:70px; margin-top:10px;'>
-	<text style="font-size:1.25em">Add new number</text>
-	</view>
-</view>
-
 </view>
 </view>
 </view>
