@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/summary/summary",
-    "pages/buyBundle/buyBundle"
+    "pages/buyBundle/buyBundle",
+    "pages/summary/summary"
   ],
   "window": {
     "defaultTitle": "Vodacom Bundles"

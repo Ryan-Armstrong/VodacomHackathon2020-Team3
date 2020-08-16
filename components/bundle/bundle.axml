@@ -1,15 +1,24 @@
-<view class="card" onTap="onClickBundle">
-  <view class="banner">
-    <view class="banner-text" a:if="{{promotion != null}}">ON SPECIAL</view>
+<view class="card {{cardBorderSelect}}">
+  <view class="topRow">
+    <view class="banner">
+      <view class="banner-text" a:if="{{bundle.promoBanner != null}}">{{bundle.promoBanner}}</view>
+    </view>
+    <view class="{{bundleHighlight}}" >
+      <view class="select-icon fas fa-check" a:if={{isSelected}}></view>
+    </view>
   </view>
-  <text class="mainText">{{bundle}}</text>
-  <view class="category"><view class="category-text" a:if="{{category!=null}}">{{category}}</view></view>
+  <view class="iconContainer">
+    <view a:if="{{bundle.iconClass != null}}" class="{{bundle.iconClass}}"></view>
+  </view>
+  <text class="mainText">{{bundle.bundle}}</text>
+  <view class="category">
+    <view class="category-text" a:if="{{bundle.categoryText!=null}}">{{bundle.categoryText}}</view></view>
   <view class="divider"></view>
-  <text class="subText" a:if="{{promotion==null}}">R{{price}}</text>
-  <view class="promoContainter" a:if="{{promotion!=null}}">
-    <text class="promo">R{{promotion}}</text>
+  <text class="subText" a:if="{{bundle.promotionalPrice==null}}">R{{bundle.price}}</text>
+  <view class="promoContainter" a:if="{{bundle.promotionalPrice!=null}}">
+    <text class="promo">R{{bundle.promotionalPrice}}</text>
     <text class="promoText"> was</text>
-    <text class="promoStrike"> R{{price}}</text>
+    <text class="promoStrike"> R{{bundle.price}}</text>
   </view>
-  <view class="info">{{info}}</view>
+  <view class="info">{{bundle.info}}</view>
 </view>

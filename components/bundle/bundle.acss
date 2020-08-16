@@ -1,21 +1,47 @@
-.card {
-  /* Add shadows to create the "card" effect */
+.card {  
   display: flex;
   margin: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   background-color: rgb(252, 252, 252);
-  border-radius: 6pt;
-  box-sizing: border-box;
   width: 90%;
   height: 160px;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
 }
 
-.card:hover {
-  box-shadow: 0 4px 8px 0 red;
+.topRow {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width:100%;
 }
+
+.select-box {
+  width: 20pt;
+  height: 20pt;
+  background-color:rgb(0,124,146);
+  clip-path: polygon(100% 100%, 0% 0%, 100% 0%);
+  display: flex;
+  align-self: flex-start;
+  justify-content: flex-end;
+  border-top-right-radius: 3pt;
+}
+
+.unselect-box {
+  width: 20pt;
+  height: 20pt;
+  background-color:rgb(252, 252, 252);
+  clip-path: polygon(100% 100%, 0% 0%, 100% 0%);
+  display: flex;
+  align-self: flex-start;
+  justify-content: flex-end;
+  border-top-right-radius: 6pt;
+}
+
+.select-icon {
+  color: white;
+  margin: 2px;
+}
+
 
 .banner {
   height: 20%;
@@ -24,7 +50,7 @@
 }
 
 .banner-text {
-  background-color: red;
+  background-color: rgb(235, 151, 0);
   border-radius: 6px 0px 6px 0px;
   padding: 4px;
   font-size: 9pt;
@@ -98,4 +124,16 @@
 .category {
   height: 1%;
   width: auto;
+}
+
+.card-unselect-border {
+  border: 2pt solid rgb(197, 197, 197);
+  border-radius: 6pt;
+  box-sizing: border-box;
+}
+
+.card-select-border {
+  border: 2pt solid rgb(0, 124, 146);
+  border-radius: 6pt;
+  box-sizing: border-box;
 }

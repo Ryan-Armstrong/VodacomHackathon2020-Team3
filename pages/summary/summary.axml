@@ -1,59 +1,62 @@
 <view class="summary-container">
   <view class="purchase-summary">
     <view class="promo-banner">
-      <view class="promo-banner-text">
-        JUST 4 YOU
+      <view class="promo-banner-text" a:if={{selectedBundle.promoBanner != null}}>
+        {{selectedBundle.promoBanner}}
       </view>
     </view>
     <text class="purchase-summary-text">Purchase summary</text>
     <view class="main-product-size">
-      <text>1.5GB</text>
+      <text>{{selectedBundle.bundle}}</text>
     </view>
     <view class="product-info-list">
       <view class="product-info">
-        <text class="product-category-text">Category</text>
-        <text class="product-validity-text"> (Validity)</text>
+        <text class="product-category-text">{{selectedBundle.categoryText}}</text>
+        <text class="product-validity-text">({{selectedBundle.frequency}},{{selectedBundle.validityDisplayName}})</text>
       </view>
-      <view class="product-info">
-        <text class="product-category-text">Category</text>
-        <text class="product-validity-text"> (Validity)</text>
-      </view>
+      <!-- Selections of the recommended bundles -->
+      <block a:for="{{selectedRecommendedBundles}}">
+        <view class="product-info">
+          <text class="product-category-text">{{item.categoryText}}</text>
+          <text class="product-validity-text">({{item.frequency}},{{item.validityDisplayName}})</text>
+        </view>
+      </block>
     </view>
     <view class="product-receiver-text">
       <text>For 0721231234</text>
     </view>
     <view class="hline-bottom-white"></view>
     <view class="order-total">
-      <view class="order-total-text"><text>Total:</text></view>
-      <view class="order-amount-text"><text>R 129.00</text></view>
+      <view class="order-total-text">
+        <text>Total:</text></view>
+      <view class="order-amount-text">
+        <text>R {{orderTotal.toFixed(2)}}</text></view>
     </view>
   </view>
-  <view class="purchase-repeat">
-    <view class="purchase-repeat-text">
-      <text>Repeat this purchase?</text>
+  <block a:if="{{selectedBundle.recurringBundle != null}}">
+    <view class="purchase-repeat">
+      <view class="purchase-repeat-text">
+        <text>Repeat this purchase?</text>
+      </view>
+      <view class="purchase-repeat-info">
+        <view class="purchase-repeat-icon fas fa-sync fa-lg"></view>
+        <view class="purchase-repeat-info-text">Every {{selectedBundle.validityDisplayName}} at R{{selectedBundle.recurringBundle.price}}</view>
+        <view class="purchase-repeat-saving-container">
+          <view class="purchase-repeat-saving-text" a:if="{{selectedBundle.recurringBundle.saving != null}}">Save R{{selectedBundle.recurringBundle.saving}}</view></view>
+        <view class="purchase-repeat-checkbox">
+          <checkbox id="select-recurring" onChange="recurringSelection"/></view>
+      </view>
     </view>
-    <view class="purchase-repeat-info">
-      <view class="purchase-repeat-icon fas fa-sync fa-lg"></view>
-      <view class="purchase-repeat-info-text">Every x days at R119</view>
-      <view class="purchase-repeat-saving-text">Save R10</view>
-      <view class="purchase-repeat-checkbox"><checkbox value=""/></view>
-    </view>
-  </view>
-  <view class="hline-bottom-grey"></view>
+    <view class="hline-bottom-grey"></view>
+  </block>
   <view class="recommended-bundles">
-    <view class="card-container">
-      <bundle validity="7 days" category="Neflix Data" bundle="1GB" price="12.00"></bundle>
-    </view>
-    <view class="card-container">
-      <bundle validity="7 days" category="Whatsapp Data" bundle="10G" price="12.00"></bundle>
-    </view>
-    <view class="card-container">
-      <bundle validity="7 days" category="Facebook Data"  bundle="1GB" price="12.00"></bundle>
-    </view>
+    <block a:for="{{selectedBundle.recommenedBundles}}">
+      <view class="card-container" onTap="selectBundle" id="{{index}}">
+        <bundle ref="saveRef" bundle="{{item}}"></bundle>
+      </view>
+    </block>
+    <!--<view class="card-container" onTap="selectBundle" id="1"><bundle ref="saveRef" category="Whatsapp Data" iconClass="fab fa-whatsapp" bundle="10G" price="12.00"></bundle></view><view class="card-container" onTap="selectBundle" id="2"><bundle ref="saveRef" category="Facebook Data" iconClass="fab fa-facebook-square" bundle="1GB" price="12.00" info="use within 7 days"></bundle></view> -->
   </view>
-  <view class="terms-and-conditions">By selecting ‘Buy now’ you agree to T and Cs.</view>
-
-
-
-  <button class="buy-button" size="default" type="primary" onTap="clickBuyBundleButton">Buy Now</button>
+  <view class="terms-and-conditions">By selecting ‘Buy now’ you agree to T's and Cs.</view>
+  <button class="buy-button" onTap="buyNow">Buy Now</button>
 </view>
