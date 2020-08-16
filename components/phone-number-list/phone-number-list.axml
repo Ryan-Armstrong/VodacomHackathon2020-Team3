@@ -6,16 +6,12 @@
         value="{{value}}"
         placeholder="Search "
         onInput="handleSubmit"
-        onClear="handleClear"
-        
-    
+        onClear="handleClear"    
         onBlur="handleBlur"
         onCancel="handleCancel"
         onSubmit="handleSubmit"
         showCancelButton="{{false}}" />
 </view>
-
-<!-- List -->
 
   <form onSubmit="onSubmit" onReset="onReset">
   
@@ -43,7 +39,7 @@
 
 <view class="flex-container">
 <view a:if="{{isShowInput}}">
- <input placeholder="enter number" hidden   onInput="onEnterNumber"/>
+ <input placeholder="enter number" hidden  class="numberInput"  onInput="onEnterNumber"/>
  <button onTap="onProceed"><view class=btnText>Proceed</view></button>
 </view>
 
