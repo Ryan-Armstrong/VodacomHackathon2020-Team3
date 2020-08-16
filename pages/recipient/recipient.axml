@@ -1,5 +1,5 @@
 <view class="toolbar"  >
-<heading/>
+<!-- <heading/> -->
 <phone-number-list/>
 <!-- <am-checkbox/> -->
 <footer value= "footer"/>

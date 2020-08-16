@@ -1,11 +1,11 @@
 .toolbar {
-  background-color: rgb(230, 0, 0);
-  width: 360pt;
+  /* background-color: rgb(230, 0, 0); */
+  width: 373pt;
   height: 56pt;
 }
 
 .uxDesign {
-  color: rgb(230, 255, 255);
+  /* color: rgb(230, 255, 255); */
   width: 221pt;
   height: 23pt;
   font-size: 20pt;
@@ -18,7 +18,7 @@
 .toolbarBg {
   width: 360pt;
   height: 56pt;
-  background-color: rgb(230, 0, 0);
+  /* background-color: rgb(230, 0, 0); */
 }
 
 .textContainer {

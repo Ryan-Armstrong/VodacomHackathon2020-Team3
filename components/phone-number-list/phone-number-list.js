@@ -83,7 +83,8 @@ Component({
 
       handleSubmit(value) {
       var contacts = this.data.contacts;
-      var filteredContacts= contacts.filter(function(contact){ return contact.name.toUpperCase() ==value.toUpperCase()})
+      console.log(contacts)
+      var filteredContacts= contacts.filter(function(contact){ return contact.name.toUpperCase().startsWith(value.toUpperCase())})
 
   
       if(filteredContacts.length >0){
