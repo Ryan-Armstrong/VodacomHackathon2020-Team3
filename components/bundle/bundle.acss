@@ -1,39 +1,58 @@
-.card {
-  /* Add shadows to create the "card" effect */
+.card {  
   display: flex;
   margin: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
   background-color: rgb(252, 252, 252);
-  border-radius: 6pt;
-  resize: none;
-  box-sizing: border-box;
-  width: 145px;
+  width: 90%;
   height: 160px;
-  float: left;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  vertical-align: middle;
-
-  /*
-  overflow: auto;
-  */
 }
 
-.card:hover {
-  box-shadow: 0 4px 8px 0 red;
+.topRow {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width:100%;
 }
+
+.select-box {
+  width: 20pt;
+  height: 20pt;
+  background-color:rgb(0,124,146);
+  clip-path: polygon(100% 100%, 0% 0%, 100% 0%);
+  display: flex;
+  align-self: flex-start;
+  justify-content: flex-end;
+  border-top-right-radius: 3pt;
+}
+
+.unselect-box {
+  width: 20pt;
+  height: 20pt;
+  background-color:rgb(252, 252, 252);
+  clip-path: polygon(100% 100%, 0% 0%, 100% 0%);
+  display: flex;
+  align-self: flex-start;
+  justify-content: flex-end;
+  border-top-right-radius: 6pt;
+}
+
+.select-icon {
+  color: white;
+  margin: 2px;
+}
+
 
 .banner {
-  height: 10;
+  height: 20%;
   width: auto;
-  background-color: red;
+  align-self: flex-start;
+}
+
+.banner-text {
+  background-color: rgb(235, 151, 0);
   border-radius: 6px 0px 6px 0px;
   padding: 4px;
-  position: relative;
-  align-self: flex-start;
   font-size: 9pt;
   font-weight: bold;
   color: white;
@@ -71,7 +90,8 @@
   border-bottom: 1pt solid rgb(220, 220, 220);
   width: 70%;
   padding-bottom: 15px;
-  margin: 10px;
+  margin-top: 5%;
+  margin-bottom: 5%;  
 }
 
 .promoContainter {
@@ -99,4 +119,21 @@
   letter-spacing: 0;
   color: rgb(103, 103, 103);
   text-decoration: line-through;
+}
+
+.category {
+  height: 1%;
+  width: auto;
+}
+
+.card-unselect-border {
+  border: 2pt solid rgb(197, 197, 197);
+  border-radius: 6pt;
+  box-sizing: border-box;
+}
+
+.card-select-border {
+  border: 2pt solid rgb(0, 124, 146);
+  border-radius: 6pt;
+  box-sizing: border-box;
 }

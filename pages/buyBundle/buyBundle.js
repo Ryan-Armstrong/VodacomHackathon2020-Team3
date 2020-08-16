@@ -6,118 +6,63 @@ Page({
     unselectedFilterColor: "#F4F4F4",
     appliedFilterColor: "#F4F4F4",
     filters: [
+      { name: "Any", displayName: "Any", selected: true },
       { name: "30days", displayName: "30 Days", selected: false },
       { name: "untilMidnight", displayName: "Until Midnight", selected: false },
       { name: "1hour", displayName: "1 Hour", selected: false }
     ],
-    masterBundles: [
-      {
-        bundle: "1GB",
-        price: "12",
-        promotion: null,
-        info: null,
-        type: "data",
-        validity: "1hour"
-      },
-      {
-        bundle: "1GB",
-        price: "29",
-        promotion: null,
-        info: null,
-        type: "data",
-        validity: "untilMidnight"
-      },
-      {
-        bundle: "1GB",
-        price: "115",
-        promotion: "99",
-        info: null,
-        type: "data",
-        validity: "30days"
-      },
-      {
-        bundle: "250MB",
-        price: "59",
-        promotion: "49",
-        info: null,
-        type: "data",
-        validity: "30days"
-      },
-      {
-        bundle: "1.5GB",
-        price: "149",
-        promotion: "129",
-        info: null,
-        type: "data",
-        validity: "30days"
-      },
-      {
-        bundle: "500MB",
-        price: "79",
-        promotion: null,
-        info: null,
-        type: "data",
-        validity: "30days"
-      },
-      {
-        bundle: "3GB",
-        price: "229",
-        promotion: null,
-        info: null,
-        type: "data",
-        validity: "30days"
-      },
-      {
-        bundle: "5GB",
-        price: "349",
-        promotion: null,
-        info: null,
-        type: "data",
-        validity: "30days"
-      }
-    ],
+    masterBundles: app.masterBundleData,
     displayedBundles: []
   },
   onLoad() {
-    let initBundles = [];
-
-    for (var i of this.data.masterBundles) {
-      initBundles.push(i);
-    }
-
     this.setData({
-      displayedBundles: initBundles
+      displayedBundles: this.data.masterBundles.map(e => ({ ...e, hideBundle: false }))
     });
   },
-
   onChecked(e) {
     // Modify global data
-    const checkedFilters = e.currentTarget.id;
-    this.data.filters = this.data.filters.map(filter => ({
-      ...filter,
-      selected: checkedFilters.indexOf(filter.name) > -1
-    }));
-
-    const newFilters = this.data.filters;
-    let newDisplayBundles = [];
-
-    for (var i of this.data.masterBundles) {
-      for (var filter of this.data.filters) {
-        if (filter.selected == true) {
-          if (i.validity == filter.name) {
-            newDisplayBundles.push(i);
-          }
-        }
-      }
+    let checkedFilters = e.currentTarget.id;
+    if (checkedFilters == 'Any') {
+      const newFilters = this.data.filters;
+      this.setData({
+        displayedBundles: this.data.masterBundles,
+        filters: newFilters
+      });
+    } else {
+      let selectedFilter = this.data.filters.filter(e => checkedFilters.indexOf(e.name) > -1)[0];
+      this.setData({
+        displayedBundles: this.data.displayedBundles.map(e => ({
+          ...e,
+          hideBundle: (e.validity != selectedFilter.name)
+        })),
+        filters: this.data.filters.map(filter => ({
+          ...filter,
+          selected: checkedFilters.indexOf(filter.name) > -1
+        }))
+      });
+    }
+  },
+  selectBundle(e) {
+    this.bundlesRef.map(function (bundle) {
+      bundle.clearSelection();
+    });
+    let selectedBundle = this.bundlesRef[e.currentTarget.id]
+    selectedBundle.selectBundle();
+    app.selectedBundle = { isRecurring: false, ...selectedBundle.props.bundle, validityDisplayName: this.data.filters.filter(e => e.name == selectedBundle.props.bundle.validity)[0].displayName };
+  },
+  clickBuyBundleButton() {
+    if (app.selectedBundle.bundle == null) {
+      this.setData({ shake: 'shake' });
+      setTimeout(() => {
+        this.setData({ shake: '' });
+      }, 250);
+    } else {
+      my.navigateTo({ url: '../summary/summary' });
     }
 
-    this.setData({
-      displayedBundles: newDisplayBundles,
-      filters: newFilters
-    });
   },
-
-  clickBuyBundleButton() {
-    console.log(app.selectedBundle);
-  }
+  saveRef(ref) {
+    this.bundlesRef = [...this.bundlesRef, ref];
+  },
+  bundlesRef: [],
 });

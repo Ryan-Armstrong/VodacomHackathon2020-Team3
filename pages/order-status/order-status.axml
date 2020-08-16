@@ -1,0 +1,17 @@
+<view class="order-status-container">
+  <view class="icon-container">
+    <view class="far fa-check-circle fa-7x icon-color"></view>
+  </view>
+  <view class="status-container">Thank you!</view>
+  <view class="order-list-container">
+    <view style="font-family:VodafoneRgBd; font-size:16pt">You've purchased:</view>
+    <view style="font-size:16pt">{{selectedBundle.bundle}} {{selectedBundle.categoryText}}</view>
+    <block a:for={{selectedRecommendedBundles}}>
+      <view style="font-size:16pt">{{item.bundle}} {{item.categoryText}}</view>
+    </block>
+  </view>
+  <view class="message-container">You'll be notified via SMS when your bundles are active and ready for use.</view>
+  <view class="home-button-container">
+    <button class="ok-button" onTap="goHome">OK</button>
+  </view>
+</view>

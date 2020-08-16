@@ -1,5 +1,23 @@
+@import './font-awesome.acss';
+
+@font-face {
+  font-family: VodafoneRg;
+  src: url(/assets/fonts/VodafoneRg.ttf);
+}
+
+@font-face {
+  font-family: VodafoneRgBd;
+  src: url(/assets/fonts/VodafoneRgBd.ttf);
+}
+
+@font-face {
+  font-family: VodafoneLt;
+  src: url(/assets/fonts/VodafoneLt.ttf);
+}
+
 page {
   flex: 1;
   display: flex;
-  background: #f7f7f7;
+  background:rgb(244,244,244);
+  font-family: 'VodafoneRg';
 }

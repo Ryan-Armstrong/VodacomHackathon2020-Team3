@@ -1,22 +1,34 @@
-const app = getApp();
-
 Component({
   props: {
-    bundle: null,
-    price: null,
-    promotion: null,
-    info: null,
-    type: null,
-    validity: null
+    bundle: null
+  },
+  data: {
+    isSelected: false,
+    bundleHighlight: "unselect-box",
+    cardBorderSelect: "card-unselect-border"
   },
   methods: {
-    onClickBundle() {
-      app.selectedBundle.bundle = this.props.bundle;
-      app.selectedBundle.price = this.props.price;
-      app.selectedBundle.promotion = this.props.promotion;
-      app.selectedBundle.info = this.props.info;
-      app.selectedBundle.type = this.props.type;
-      app.selectedBundle.validity = this.props.validity;
+    selectBundle() {
+      if (this.data.isSelected) {
+        this.setData({
+          isSelected: !this.data.isSelected,
+          bundleHighlight: "unselect-box",
+          cardBorderSelect: "card-unselect-border"
+        });
+      } else {
+        this.setData({
+          isSelected: !this.data.isSelected,
+          bundleHighlight: "select-box",
+          cardBorderSelect: "card-select-border"
+        });
+      }
+    },
+    clearSelection() {
+      this.setData({ 
+        isSelected: false, 
+        bundleHighlight: "unselect-box",
+        cardBorderSelect: "card-unselect-border"
+      });
     }
-  }
+  },
 });
