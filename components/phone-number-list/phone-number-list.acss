@@ -97,7 +97,7 @@ button{
 }
 .btnAdd{
   font-size:.7em;
-  font-family: VodafoneRg-Regular;
+  font-family: 'VodafoneRg';
 }
 .numberInput{
     width: 300px;

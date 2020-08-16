@@ -24,7 +24,7 @@ page {
 
 .toolBarText {
   position: relative;
-  font-family: VodafoneRg-Regular;
+  font-family: 'VodafoneRg';
   font-size: 20px;
   height: 56px;
   width: 342px;
