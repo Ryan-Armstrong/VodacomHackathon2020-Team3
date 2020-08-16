@@ -2,15 +2,17 @@
   <text class="text">To use within</text>
   <view class="filterContainer">
     <block a:for="{{filters}}" a:for-item="item" a:key="*this">
-      <view id="{{item.name}}" class="{{item.selected ? 'filterItemSelected' : 'filterItemUnselected'}}"  onTap="onChecked"> 
+      <view id="{{item.name}}" class="{{item.selected ? 'filterItemSelected' : 'filterItemUnselected'}}" onTap="onChecked">
         <text id="filter_{{index}}">{{item.displayName}}</text>
       </view>
     </block>
   </view>
   <view style="flex-grow:1; height:1px">
-  <view class="bundle-container" style="overflow-y:overlay; max-height:100%">
-    <bundle a:for="{{displayedBundles}}" a:for-item="bundle" a:key="*this" validity="{{bundle.validity}}" type="{{bundle.type}}" bundle="{{bundle.bundle}}" price="{{bundle.price}}" promotion="{{bundle.promotion}}" info="{{bundle.info}}"></bundle>
-  </view >
+    <view class="bundle-container" style="overflow-y:overlay; max-height:100%">
+      <view class="card-container" a:for="{{displayedBundles}}" a:for-item="bundle" a:key="*this">
+        <bundle validity="{{bundle.validity}}" type="{{bundle.type}}" bundle="{{bundle.bundle}}" price="{{bundle.price}}" promotion="{{bundle.promotion}}" info="{{bundle.info}}"></bundle>
+      </view>
+    </view>
   </view>
   <button class="purchase-button" size="default" type="primary" onTap="clickBuyBundleButton">Buy Bundle</button>
 </view>

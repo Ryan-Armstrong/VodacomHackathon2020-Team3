@@ -22,7 +22,7 @@
     <view class="product-receiver-text">
       <text>For 0721231234</text>
     </view>
-    <view class="hline-bottom"></view>
+    <view class="hline-bottom-white"></view>
     <view class="order-total">
       <view class="order-total-text"><text>Total:</text></view>
       <view class="order-amount-text"><text>R 129.00</text></view>
@@ -33,15 +33,24 @@
       <text>Repeat this purchase?</text>
     </view>
     <view class="purchase-repeat-info">
-      <view class="fa-fw select-all fas">
-        x
-      </view>
+      <view class="purchase-repeat-icon fas fa-sync fa-lg"></view>
       <view class="purchase-repeat-info-text">Every x days at R119</view>
       <view class="purchase-repeat-saving-text">Save R10</view>
       <view class="purchase-repeat-checkbox"><checkbox value=""/></view>
     </view>
   </view>
-  <view class="recommended-bundles"></view>
+  <view class="hline-bottom-grey"></view>
+  <view class="recommended-bundles">
+    <view class="card-container">
+      <bundle validity="7 days" category="Neflix Data" bundle="1GB" price="12.00"></bundle>
+    </view>
+    <view class="card-container">
+      <bundle validity="7 days" category="Whatsapp Data" bundle="10G" price="12.00"></bundle>
+    </view>
+    <view class="card-container">
+      <bundle validity="7 days" category="Facebook Data"  bundle="1GB" price="12.00"></bundle>
+    </view>
+  </view>
   <view class="terms-and-conditions">By selecting ‘Buy now’ you agree to T and Cs.</view>
 
 

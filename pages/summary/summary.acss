@@ -59,13 +59,21 @@
   align-self: center;
 }
 
-.hline-bottom {
+.hline-bottom-white {
   padding: 5px;
   border-bottom: 1px solid rgb(255, 255, 255);
   width: 80%;
   align-self: center;
   opacity: 0.3;
 }
+
+.hline-bottom-grey {
+  border-bottom: 1px solid rgb(151, 151, 151);
+  width: 80%;
+  align-self: center;
+  opacity: 0.3;
+}
+
 
 .order-total {
   padding: 5px;
@@ -89,7 +97,6 @@
 }
 
 .purchase-repeat {
-  flex-grow: 1;
   display: flex;
   margin: 5%;
   flex-direction: column;
@@ -105,10 +112,15 @@
   display: flex;
 }
 
-.purchase-repeat-info-text {
+.purchase-repeat-icon {
   flex-grow: 1;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
+}
+
+.purchase-repeat-info-text {
+  display: flex;
   margin-right: 2%;
   color: rgb(102,102,102);
   font-size: 14pt;
@@ -137,6 +149,12 @@
 
 .recommended-bundles {
   flex-grow: 1;
+  display: flex;
+}
+
+.card-container {
+  flex: 1 0 33%;
+  max-width: 33%;
 }
 
 .terms-and-conditions {

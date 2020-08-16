@@ -1,3 +1,6 @@
 {
-   "defaultTitle": "Bundle Summary"
+  "defaultTitle": "Bundle Summary",
+  "usingComponents": {
+    "bundle": "/components/bundle/bundle"
+  }
 }

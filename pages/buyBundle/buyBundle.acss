@@ -4,6 +4,11 @@
   flex-grow: 1;
 }
 
+.card-container {
+  flex: 1 0 50%;
+  max-width: 50%;
+}
+
 .purchase-button {
   background-color: red;
   align-self: center;
