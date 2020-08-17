@@ -143,6 +143,7 @@ App({
       categoryText: "Data",
       info: "Use within 30 days",
       recurringBundle: {
+        frequency: "Recurring",
         price: 100,
         saving: 29
       }
